@@ -1,0 +1,36 @@
+
+Dataset:
+TreeQA require two different files as input file, genotype file and
+phenotype file.
+for phenotype file, each line contains one individual's name and
+phenotype value, separated by space.
+for genotype file, it is a cvs format. First line of genotype file is
+header, beginning with some meta information such as SNP id, position,
+etc, and following the names of strains/individuals (Genotype
+information must be consecutive columns and must start from some
+column to the end ). Please take a look at sample.csv as an example.
+And your csv file is not necessary to have exact the same meta info as
+the example file. In config.cfg, you can configure how many columns at
+beginning will be ignored by TreeQA.
+
+config.cfg:
+It is the configuration file of TreeQA, please take a look at the
+content, I make some content about each parameters. The parameters you
+need to modify to make sure TreeQA is running correctly is hvalue,
+mvalue, ignore_column. hvalue and mvalue are the characters to
+represent heterozygous site and missing value in the data, besides
+A,T,C,G to represent four nucleotides. Though TreeQA could handle
+missing value, but the effectiveness is very limited, and some time it
+introduces errors. So if you can, please delete all SNPs with missing
+values. Or make sure the missing part is less than 1%.
+
+Result:
+Result file names could be specified, and in the first command as an
+example, it is sample_pvalue and sample_tree.output. There two files
+have same number of lines. Each line in sample_pvalue corresponds to
+the same line in sample_tree.output. Sample_pvalue file only contains
+one number in each line, which is log(-Pvalue), the higher the more
+significant. And sample_tree.output is another file contains three
+columns, the first two columns are the begin and end SNP of the
+phylogeny tree, indexed by the row number in your genotype file. And
+the third column is the phylogeny tree TreeQA use for calculation.

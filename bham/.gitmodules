@@ -1,0 +1,15 @@
+[submodule "build-common"]
+	path = build-common
+	url = ../build-common
+[submodule "modules/java-util"]
+	path = modules/java-util
+	url = ../java-util
+[submodule "modules/genetic-util"]
+	path = modules/genetic-util
+	url = ../genetic-util
+[submodule "modules/haplotype-inference"]
+	path = modules/haplotype-inference
+	url = ../haplotype-inference
+[submodule "modules/haplotype-analysis"]
+	path = modules/haplotype-analysis
+	url = ../haplotype-analysis

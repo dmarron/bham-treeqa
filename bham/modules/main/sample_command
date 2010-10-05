@@ -1,0 +1,4 @@
+./lp_test --config config.cfg --genotype_file="sample.csv" --phenotype_file="sample_phenotype" --output="sample_pvalue" --tree_output="sample_tree.output"
+
+php annotate.php sample_pvalue sample_tree.output sample.csv 1 0 2
+
